@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aeris AI — Profile</title>
+    <link rel="stylesheet" href="profile.css">
+</head>
+
+<body>
+    <div class="app-profile">
+
+        <!-- LEFT SIDEBAR -->
+        <aside class="left">
+            <div class="brand">Aeris AI</div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Dashboard</a></li>
+                    <li><a href="./profile.html" class="active">Profile</a></li>
+                    <li><a href="#" id="logoutBtn">Logout</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- MAIN PROFILE CONTENT -->
+        <main class="center">
+            <div class="profile-card">
+
+                <!-- Avatar + Username -->
+                <div class="profile-header">
+                    <div class="avatar" id="userAvatar">A</div>
+                    <div class="profile-info">
+                        <div id="userName">User</div>
+                        <p>Email: <span id="userEmail">user@example.com</span></p>
+                        <p>Joined: <span id="userJoined">-</span></p>
+                    </div>
+                </div>
+
+                <!-- Mode Selection -->
+                <div class="section">
+                    <h3>Notification Mode</h3>
+                    <select id="userModeSelect">
+                        <option value="Weather Watch"> Weather Watch - receive all notifications</option>
+                        <option value="Health Focus">Health Focus - receive moderate & high alerts</option>
+                        <option value="Critical Alters">Only critical alerts</option>
+                    </select>
+                </div>
+
+                <!-- User Age -->
+                <div class="section">
+                    <h3>Age</h3>
+                    <input type="number" id="userAge" min="1" max="120" placeholder="Enter your age">
+                </div>
+
+                <!-- Medical Conditions -->
+                <div class="section">
+                    <h3>Medical Conditions</h3>
+                    <textarea id="userConditions" placeholder="e.g., Asthma, Diabetes"></textarea>
+                </div>
+
+                <button id="saveProfile">Save Profile</button>
+            </div>
+        </main>
+    </div>
+
+    <script src="../auth/auth.js"></script>
+    <script src="profile.js"></script>
+</body>
+
+</html>

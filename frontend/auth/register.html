@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register - Aeris AI</title>
+    <link rel="stylesheet" href="auth.css">
+</head>
+
+<body>
+    <div class="auth-box">
+        <h2>Register</h2>
+        <input type="text" id="regUsername" placeholder="Username" required>
+        <input type="email" id="regEmail" placeholder="Email" required>
+        <input type="password" id="regPassword" placeholder="Password" required>
+        <button id="registerBtn">Register</button>
+        <div class="link">
+            Already have an account? <a href="login.html">Login</a>
+        </div>
+    </div>
+    <script src="auth.js"></script>
+    <script>
+        document.getElementById("registerBtn").addEventListener("click", () => {
+            const username = document.getElementById("regUsername").value.trim();
+            const email = document.getElementById("regEmail").value.trim();
+            const password = document.getElementById("regPassword").value.trim();
+
+            if (username && email && password) {
+                registerUser(username, email, password);
+            } else {
+                alert("Fill all fields!");
+            }
+        });
+    </script>
+</body>
+
+</html>

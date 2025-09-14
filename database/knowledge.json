@@ -1,0 +1,813 @@
+{
+    "AQI": {
+        "term": "Air Quality Index",
+        "aliases": [
+            "Air Pollution Index",
+            "Air Quality"
+        ],
+        "definition": "A numeric scale used to communicate the quality of air and its potential health effects. It aggregates multiple pollutants into a single number that is easier for the public to understand.",
+        "impact": "AQI helps people know when the air is safe or dangerous to breathe. High values can lead to respiratory problems, aggravate asthma, and reduce outdoor activity. It also informs policymakers about pollution control.",
+        "example": "If the AQI in Los Angeles reaches 180, it falls under the 'Unhealthy' category, meaning sensitive groups like children and the elderly should avoid strenuous outdoor activity.",
+        "scale": "0–500 (0–50: Good, 51–100: Moderate, 101–150: Unhealthy for sensitive groups, 151–200: Unhealthy, 201–300: Very Unhealthy, 301–500: Hazardous)"
+    },
+    "PM2.5": {
+        "term": "Particulate Matter 2.5",
+        "aliases": [
+            "Fine Particles",
+            "PM 2.5"
+        ],
+        "definition": "Microscopic particles with a diameter of less than 2.5 micrometers. These particles are so small they can penetrate deep into the lungs and even enter the bloodstream.",
+        "impact": "Exposure to PM2.5 can cause heart disease, lung cancer, and reduced lung function. It is considered one of the most harmful pollutants for human health and is also linked to reduced visibility and climate impacts.",
+        "example": "During wildfire events in California, PM2.5 levels often exceed safe limits, causing health advisories and school closures.",
+        "scale": "Measured in micrograms per cubic meter (µg/m³). WHO recommends an annual average below 5 µg/m³."
+    },
+    "PM10": {
+        "term": "Particulate Matter 10",
+        "aliases": [
+            "Coarse Particles",
+            "PM 10"
+        ],
+        "definition": "Inhalable particles with diameters generally 10 micrometers or smaller. Larger than PM2.5 but still harmful.",
+        "impact": "PM10 can irritate the eyes, nose, and throat. Long-term exposure increases the risk of respiratory illnesses. It also reduces visibility and harms ecosystems when deposited.",
+        "example": "Dust storms in the Middle East often lead to high PM10 concentrations, making outdoor air quality hazardous.",
+        "scale": "Measured in micrograms per cubic meter (µg/m³). WHO recommends a daily average below 45 µg/m³."
+    },
+    "Ozone": {
+        "term": "Ground-Level Ozone",
+        "aliases": [
+            "O3",
+            "Smog Ozone"
+        ],
+        "definition": "A secondary pollutant formed when nitrogen oxides (NOx) and volatile organic compounds (VOCs) react in sunlight.",
+        "impact": "Ground-level ozone causes respiratory irritation, reduces lung function, and damages crops. It is also a major component of smog in urban areas.",
+        "example": "On hot summer days in Mexico City, ozone levels can rise sharply, leading to smog warnings.",
+        "scale": "Measured in parts per billion (ppb). The US EPA considers 70 ppb as the safe 8-hour average limit."
+    },
+    "CO2": {
+        "term": "Carbon Dioxide",
+        "aliases": [
+            "CO2",
+            "Greenhouse Gas"
+        ],
+        "definition": "A naturally occurring greenhouse gas released by respiration, combustion, and industrial processes. It is the primary driver of human-caused climate change.",
+        "impact": "Excess CO2 traps heat in the atmosphere, causing global warming, sea level rise, and ecosystem disruptions.",
+        "example": "Burning fossil fuels in power plants significantly increases atmospheric CO2 concentrations.",
+        "scale": "Measured in parts per million (ppm). Pre-industrial levels were 280 ppm; today it exceeds 420 ppm."
+    },
+    "CH4": {
+        "term": "Methane",
+        "aliases": [
+            "CH4",
+            "Natural Gas"
+        ],
+        "definition": "A powerful greenhouse gas emitted from natural sources (wetlands) and human activities (agriculture, fossil fuel extraction).",
+        "impact": "Methane is about 28 times more effective at trapping heat than CO2 over 100 years. It contributes to climate change and also affects ground-level ozone formation.",
+        "example": "Large methane leaks from oil and gas pipelines can rapidly increase local concentrations.",
+        "scale": "Measured in parts per billion (ppb). Current global average is about 1,900 ppb."
+    },
+    "NO2": {
+        "term": "Nitrogen Dioxide",
+        "aliases": [
+            "NO2",
+            "Nitrogen Oxides"
+        ],
+        "definition": "A reddish-brown gas mainly emitted from vehicle exhaust and industrial combustion.",
+        "impact": "Causes respiratory issues, contributes to smog and acid rain, and is a precursor to ground-level ozone.",
+        "example": "Cities with heavy traffic, like Beijing, often record high NO2 concentrations during rush hour.",
+        "scale": "Measured in parts per billion (ppb). WHO recommends an annual mean of 10 ppb."
+    },
+    "SO2": {
+        "term": "Sulfur Dioxide",
+        "aliases": [
+            "SO2"
+        ],
+        "definition": "A toxic gas released mainly from burning coal and oil at power plants and refineries.",
+        "impact": "Causes respiratory problems and forms acid rain, which damages ecosystems, soil, and buildings.",
+        "example": "Mount Pinatubo's volcanic eruption released massive amounts of SO2 into the atmosphere in 1991.",
+        "scale": "Measured in parts per billion (ppb). WHO recommends a daily mean of 40 ppb."
+    },
+    "UV Index": {
+        "term": "UV Index",
+        "aliases": [
+            "Ultraviolet Index"
+        ],
+        "definition": "A scale designed to measure the strength of ultraviolet radiation from the sun.",
+        "impact": "High UV exposure increases risks of skin cancer, cataracts, and sunburn. It also affects ecosystems like phytoplankton productivity.",
+        "example": "Australia often experiences UV Index levels above 11, which is classified as extreme.",
+        "scale": "0–11+ (0–2: Low, 3–5: Moderate, 6–7: High, 8–10: Very High, 11+: Extreme)."
+    },
+    "Heat Index": {
+        "term": "Heat Index",
+        "aliases": [
+            "Feels Like Temperature"
+        ],
+        "definition": "A measure of how hot it feels to the human body when relative humidity is combined with air temperature.",
+        "impact": "Higher heat index values can cause heat exhaustion or heat stroke, particularly during heatwaves.",
+        "example": "In Florida, a temperature of 95°F with 70% humidity results in a heat index of 123°F.",
+        "scale": "Measured in degrees Fahrenheit or Celsius; above 103°F is considered dangerous."
+    },
+    "El Niño": {
+        "term": "El Niño",
+        "aliases": [
+            "ENSO Warm Phase"
+        ],
+        "definition": "A periodic climate pattern where warming of the central and eastern tropical Pacific Ocean alters global weather and climate systems.",
+        "impact": "El Niño can cause droughts, floods, and disrupted monsoon patterns worldwide. It also reduces fish populations in the Pacific due to disrupted upwelling.",
+        "example": "The 1997–1998 El Niño was one of the strongest recorded, causing billions of dollars in damage and major global weather disruptions.",
+        "scale": "Measured by sea surface temperature anomalies in the Niño 3.4 region; +0.5°C or higher for at least 5 consecutive months indicates El Niño."
+    },
+    "La Niña": {
+        "term": "La Niña",
+        "aliases": [
+            "ENSO Cool Phase"
+        ],
+        "definition": "A periodic climate pattern characterized by cooler-than-average sea surface temperatures in the central and eastern tropical Pacific Ocean.",
+        "impact": "La Niña often causes stronger hurricanes in the Atlantic, heavier monsoons in Asia, and droughts in parts of the Americas.",
+        "example": "The 2010–2011 La Niña caused severe flooding in Australia and drought in East Africa.",
+        "scale": "Measured by sea surface temperature anomalies in the Niño 3.4 region; -0.5°C or lower for at least 5 consecutive months indicates La Niña."
+    },
+    "Monsoon": {
+        "term": "Monsoon",
+        "aliases": [
+            "Seasonal Rainfall",
+            "Southwest Monsoon"
+        ],
+        "definition": "A seasonal wind pattern that brings heavy rainfall during one part of the year and dry conditions during another.",
+        "impact": "Monsoons are vital for agriculture but can cause flooding, landslides, and infrastructure damage when extreme.",
+        "example": "The South Asian monsoon provides 80% of India’s annual rainfall but can also trigger deadly floods.",
+        "scale": "Measured by seasonal rainfall totals and wind shifts."
+    },
+    "Cold Wave": {
+        "term": "Cold Wave",
+        "aliases": [
+            "Extreme Cold",
+            "Cold Snap"
+        ],
+        "definition": "A rapid and prolonged drop in temperature, often below the average for a given region and time of year.",
+        "impact": "Cold waves can cause hypothermia, frostbite, crop failure, and power outages due to increased heating demand.",
+        "example": "The 2021 Texas cold wave caused widespread blackouts and over 200 deaths.",
+        "scale": "Defined relative to local climate; measured by minimum daily temperatures over several days."
+    },
+    "Storm Surge": {
+        "term": "Storm Surge",
+        "aliases": [
+            "Coastal Surge",
+            "Tidal Surge"
+        ],
+        "definition": "An abnormal rise in sea level during a storm, caused by strong winds and low atmospheric pressure.",
+        "impact": "Storm surges flood coastal areas, damage property, erode shorelines, and cause fatalities.",
+        "example": "Hurricane Sandy (2012) generated a storm surge that flooded New York City subways and caused $65 billion in damages.",
+        "scale": "Measured in meters or feet above normal tide levels."
+    },
+    "Global Warming": {
+        "term": "Global Warming",
+        "aliases": [
+            "Climate Warming",
+            "Rising Temperatures"
+        ],
+        "definition": "The long-term increase in Earth's average surface temperature primarily caused by human emissions of greenhouse gases such as CO2 and CH4.",
+        "impact": "Global warming leads to melting glaciers, sea-level rise, more frequent heatwaves, shifts in weather patterns, and biodiversity loss.",
+        "example": "The Arctic is warming nearly four times faster than the global average, leading to rapid sea ice loss.",
+        "scale": "Measured in degrees Celsius of average temperature rise compared to pre-industrial levels; Paris Agreement aims to limit warming below 1.5–2°C."
+    },
+    "Climate Change": {
+        "term": "Climate Change",
+        "aliases": [
+            "Global Climate Shift",
+            "Climate Crisis"
+        ],
+        "definition": "Long-term changes in temperature, precipitation, wind patterns, and other aspects of the Earth's climate system, driven by both natural processes and human activities.",
+        "impact": "Climate change affects agriculture, water resources, ecosystems, health, and global security. It amplifies extreme events such as storms, droughts, and floods.",
+        "example": "Rising sea levels threaten low-lying island nations like the Maldives, which could become uninhabitable.",
+        "scale": "Observed through temperature records, greenhouse gas concentrations, and long-term climate models."
+    },
+    "Greenhouse Effect": {
+        "term": "Greenhouse Effect",
+        "aliases": [
+            "Heat Trapping Effect"
+        ],
+        "definition": "The process by which greenhouse gases trap heat in Earth's atmosphere, preventing it from escaping into space and keeping the planet warm.",
+        "impact": "Essential for life, but human activities have intensified it, leading to dangerous warming and climate instability.",
+        "example": "Venus has an extreme greenhouse effect, with surface temperatures hot enough to melt lead.",
+        "scale": "Measured by radiative forcing (watts per square meter) and greenhouse gas concentrations."
+    },
+    "Carbon Footprint": {
+        "term": "Carbon Footprint",
+        "aliases": [
+            "CO2 Footprint",
+            "Emissions Footprint"
+        ],
+        "definition": "The total amount of greenhouse gases emitted directly or indirectly by an individual, organization, event, or product, expressed in CO2 equivalents.",
+        "impact": "Carbon footprints highlight how daily activities contribute to climate change, helping people and businesses reduce emissions.",
+        "example": "Flying from London to New York emits about 986 kg of CO2 per passenger.",
+        "scale": "Measured in kilograms or metric tons of CO2 equivalent (CO2e)."
+    },
+    "Ocean Acidification": {
+        "term": "Ocean Acidification",
+        "aliases": [
+            "Acid Oceans"
+        ],
+        "definition": "The ongoing decrease in ocean pH caused by absorption of excess atmospheric CO2.",
+        "impact": "Weakens coral reefs, harms shellfish and plankton, and disrupts entire marine food chains.",
+        "example": "Pacific Northwest oyster farms have suffered mass die-offs due to more acidic waters preventing larvae from forming shells.",
+        "scale": "Measured by pH levels; pre-industrial ocean surface pH was ~8.2, now closer to ~8.1."
+    },
+    "Deforestation": {
+        "term": "Deforestation",
+        "aliases": [
+            "Forest Clearing",
+            "Tree Loss"
+        ],
+        "definition": "The large-scale removal of forests, often for agriculture, logging, or urban expansion.",
+        "impact": "Destroys habitats, reduces biodiversity, disrupts water cycles, and contributes to climate change by releasing stored carbon.",
+        "example": "The Amazon rainforest lost over 10,000 square kilometers of forest cover in 2020 alone.",
+        "scale": "Measured in hectares lost per year using satellite imagery."
+    },
+    "Biodiversity": {
+        "term": "Biodiversity",
+        "aliases": [
+            "Biological Diversity"
+        ],
+        "definition": "The variety of life on Earth, including species diversity, genetic diversity, and ecosystem diversity.",
+        "impact": "High biodiversity strengthens ecosystem resilience, while loss of biodiversity increases vulnerability to disease, climate shifts, and food insecurity.",
+        "example": "Coral reefs host about 25% of marine species despite covering less than 1% of the ocean floor.",
+        "scale": "Measured using indices like the Shannon Index, species richness, or extinction rates."
+    },
+    "Carbon Sequestration": {
+        "term": "Carbon Sequestration",
+        "aliases": [
+            "Carbon Capture",
+            "CO2 Storage"
+        ],
+        "definition": "The process of capturing and storing atmospheric CO2 to reduce greenhouse gas levels in the atmosphere.",
+        "impact": "Helps mitigate climate change by storing carbon in forests, soils, or engineered storage facilities.",
+        "example": "Reforestation projects in Kenya store thousands of tons of CO2 annually by growing native trees.",
+        "scale": "Measured in metric tons of CO2 captured per year."
+    },
+    "Renewable Energy": {
+        "term": "Renewable Energy",
+        "aliases": [
+            "Clean Energy",
+            "Sustainable Energy"
+        ],
+        "definition": "Energy from natural sources that are constantly replenished, such as solar, wind, hydro, and geothermal.",
+        "impact": "Reduces dependence on fossil fuels, lowers greenhouse gas emissions, and improves energy security.",
+        "example": "Germany generates nearly half of its electricity from renewable sources during peak production days.",
+        "scale": "Measured in megawatts (MW) or gigawatts (GW) of installed capacity and share of total energy mix."
+    },
+    "Carbon Neutrality": {
+        "term": "Carbon Neutrality",
+        "aliases": [
+            "Net Zero Emissions"
+        ],
+        "definition": "Achieved when the amount of greenhouse gases emitted is balanced by the amount removed from the atmosphere.",
+        "impact": "A major goal for countries and companies to prevent further global warming.",
+        "example": "Costa Rica aims to be carbon neutral by 2050 through renewable energy and reforestation.",
+        "scale": "Expressed as net zero CO2 equivalent emissions on a national or organizational level."
+    },
+    "Smog": {
+        "term": "Smog",
+        "aliases": [
+            "Photochemical Smog",
+            "Industrial Smog"
+        ],
+        "definition": "A type of intense air pollution caused by a mixture of smoke, chemicals, and fog, usually formed when sunlight reacts with pollutants like nitrogen oxides and volatile organic compounds.",
+        "impact": "Reduces visibility, irritates eyes and lungs, and can trigger asthma and other respiratory problems.",
+        "example": "Los Angeles frequently experiences photochemical smog due to heavy traffic emissions and sunny conditions.",
+        "scale": "Measured using AQI and pollutant concentrations, especially ozone and particulate matter."
+    },
+    "Acid Rain": {
+        "term": "Acid Rain",
+        "aliases": [
+            "Acid Deposition"
+        ],
+        "definition": "Precipitation with unusually high acidity due to sulfur dioxide and nitrogen oxides reacting with water in the atmosphere.",
+        "impact": "Damages forests, acidifies lakes, corrodes buildings, and harms aquatic life.",
+        "example": "In the 1980s, acid rain killed large areas of forest in Germany’s Black Forest region.",
+        "scale": "Measured by pH levels in rainfall; acid rain typically has a pH of 4.0–4.5."
+    },
+    "Microplastics": {
+        "term": "Microplastics",
+        "aliases": [
+            "Plastic Particles"
+        ],
+        "definition": "Tiny plastic fragments less than 5 millimeters in size, created from the breakdown of larger plastic items or microbeads in consumer products.",
+        "impact": "Accumulate in oceans, rivers, and even human bodies, posing risks to marine life and human health.",
+        "example": "Researchers have found microplastics in bottled water, table salt, and human blood samples.",
+        "scale": "Measured in particles per liter of water or per kilogram of material."
+    },
+    "Ozone Depletion": {
+        "term": "Ozone Depletion",
+        "aliases": [
+            "Ozone Hole"
+        ],
+        "definition": "The thinning of the Earth’s ozone layer in the stratosphere, primarily caused by chlorofluorocarbons (CFCs) and halons.",
+        "impact": "Increases harmful ultraviolet (UV) radiation reaching the Earth’s surface, leading to higher risks of skin cancer and eye damage.",
+        "example": "The Antarctic ozone hole was first discovered in 1985 and remains a recurring seasonal phenomenon.",
+        "scale": "Measured in Dobson Units (DU); normal ozone levels are 300 DU, but the Antarctic ozone hole can drop below 100 DU."
+    },
+    "Noise Pollution": {
+        "term": "Noise Pollution",
+        "aliases": [
+            "Sound Pollution"
+        ],
+        "definition": "Unwanted or harmful sound that disrupts normal environmental balance, often caused by traffic, industry, and urbanization.",
+        "impact": "Can cause stress, hearing loss, sleep disturbances, and reduced productivity.",
+        "example": "Airports often face strict regulations to limit noise pollution from airplanes during nighttime hours.",
+        "scale": "Measured in decibels (dB); prolonged exposure above 85 dB can be harmful."
+    },
+    "Light Pollution": {
+        "term": "Light Pollution",
+        "aliases": [
+            "Artificial Light Pollution"
+        ],
+        "definition": "Excessive or misdirected artificial light that brightens the night sky, obscuring stars and disrupting ecosystems.",
+        "impact": "Affects human sleep cycles, confuses migratory animals, and reduces visibility of astronomical observations.",
+        "example": "Major cities like New York and Tokyo have skies so bright that only a handful of stars are visible at night.",
+        "scale": "Measured using sky brightness in magnitudes per square arcsecond."
+    },
+    "Water Pollution": {
+        "term": "Water Pollution",
+        "aliases": [
+            "Contaminated Water"
+        ],
+        "definition": "The contamination of water bodies by harmful substances such as chemicals, sewage, and plastics.",
+        "impact": "Harms aquatic life, spreads disease, and disrupts ecosystems and drinking water supplies.",
+        "example": "The Ganges River in India faces severe water pollution from untreated sewage and industrial waste.",
+        "scale": "Measured with indicators like Biochemical Oxygen Demand (BOD), Chemical Oxygen Demand (COD), and pollutant concentrations."
+    },
+    "Soil Pollution": {
+        "term": "Soil Pollution",
+        "aliases": [
+            "Land Contamination"
+        ],
+        "definition": "Degradation of soil quality due to chemicals, pesticides, heavy metals, and waste dumping.",
+        "impact": "Reduces agricultural productivity, contaminates food, and harms ecosystems.",
+        "example": "E-waste dumping in parts of Africa has led to toxic soil contamination from heavy metals.",
+        "scale": "Measured by concentration of pollutants such as lead, arsenic, or pesticide residues in soil."
+    },
+    "Thermal Pollution": {
+        "term": "Thermal Pollution",
+        "aliases": [
+            "Heat Pollution"
+        ],
+        "definition": "The harmful release of heated water or air into the environment, often caused by industrial cooling systems and power plants.",
+        "impact": "Raises temperatures in rivers and lakes, reducing oxygen levels and harming aquatic life.",
+        "example": "Power plants discharging hot water into rivers can kill fish populations by disrupting ecosystems.",
+        "scale": "Measured in degrees Celsius above normal ambient temperature."
+    },
+    "Radioactive Pollution": {
+        "term": "Radioactive Pollution",
+        "aliases": [
+            "Nuclear Pollution",
+            "Radiation Pollution"
+        ],
+        "definition": "The presence of radioactive substances in the environment, usually from nuclear accidents, testing, or improper waste disposal.",
+        "impact": "Can cause cancer, genetic mutations, and long-term environmental damage.",
+        "example": "The Chernobyl disaster in 1986 released massive amounts of radioactive isotopes into the atmosphere.",
+        "scale": "Measured in becquerels (Bq) for activity or sieverts (Sv) for radiation dose."
+    },
+    "NDVI": {
+        "term": "Normalized Difference Vegetation Index",
+        "aliases": [
+            "NDVI",
+            "Vegetation Index"
+        ],
+        "definition": "A satellite-derived index measuring the density and health of vegetation using the difference between near-infrared and red light reflectance.",
+        "impact": "Helps track deforestation, drought, crop health, and ecosystem changes over time.",
+        "example": "NDVI data is used by NASA to monitor seasonal crop growth across the US Midwest.",
+        "scale": "-1 to +1; higher values indicate denser, healthier vegetation."
+    },
+    "Satellite Remote Sensing": {
+        "term": "Satellite Remote Sensing",
+        "aliases": [
+            "Earth Observation",
+            "Remote Sensing"
+        ],
+        "definition": "The collection of information about Earth's surface and atmosphere from satellites using sensors for imaging, thermal, and spectral data.",
+        "impact": "Enables monitoring of deforestation, urban expansion, climate change, and natural disasters on a global scale.",
+        "example": "Copernicus Sentinel satellites track forest cover changes in the Amazon rainforest.",
+        "scale": "Resolution varies by satellite: meters to kilometers per pixel."
+    },
+    "Air Quality Monitoring Station": {
+        "term": "Air Quality Monitoring Station",
+        "aliases": [
+            "AQ Station",
+            "Pollution Monitoring Station"
+        ],
+        "definition": "A ground-based facility measuring air pollutants like PM2.5, PM10, NO2, SO2, CO, and ozone.",
+        "impact": "Provides data for public health warnings, research, and regulatory compliance.",
+        "example": "Beijing uses a network of AQ monitoring stations to alert residents during smog events.",
+        "scale": "Pollutants measured in µg/m³ (particulate matter) or ppb (gases)."
+    },
+    "Climate Model": {
+        "term": "Climate Model",
+        "aliases": [
+            "GCM",
+            "Global Climate Model"
+        ],
+        "definition": "Mathematical simulations of the Earth's climate system used to predict future climate conditions based on greenhouse gas emissions and feedback processes.",
+        "impact": "Helps policymakers and scientists plan for climate change mitigation and adaptation.",
+        "example": "IPCC climate models project global temperature increases under different emission scenarios.",
+        "scale": "Global grids, temporal scales: decades to centuries."
+    },
+    "Dendrochronology": {
+        "term": "Dendrochronology",
+        "aliases": [
+            "Tree Ring Analysis"
+        ],
+        "definition": "The study of tree rings to understand past climate conditions, rainfall patterns, and environmental stressors.",
+        "impact": "Provides historical climate data, helping scientists validate climate models and study drought cycles.",
+        "example": "Tree rings in California have been used to reconstruct past 1000-year droughts.",
+        "scale": "Measured in ring width (mm) and density variations."
+    },
+    "Remote Water Quality Sensor": {
+        "term": "Remote Water Quality Sensor",
+        "aliases": [
+            "Water Sensor",
+            "Environmental Sensor"
+        ],
+        "definition": "Instruments deployed in rivers, lakes, or oceans to measure pH, temperature, turbidity, and chemical pollutants in real-time.",
+        "impact": "Supports water management, pollution detection, and ecosystem health assessments.",
+        "example": "Sensors in the Great Lakes monitor phosphorus levels to prevent algal blooms.",
+        "scale": "Units vary by parameter: pH, NTU (turbidity), mg/L (nutrients)."
+    },
+    "Global Precipitation Measurement": {
+        "term": "Global Precipitation Measurement",
+        "aliases": [
+            "GPM",
+            "Precipitation Satellite"
+        ],
+        "definition": "Satellite missions that provide near-real-time data on rainfall and snow worldwide.",
+        "impact": "Critical for flood forecasting, climate research, and hydrological planning.",
+        "example": "GPM satellite data is used to predict monsoon rainfall in India and Bangladesh.",
+        "scale": "Measured in millimeters per hour (mm/hr)."
+    },
+    "Greenhouse Gas Inventory": {
+        "term": "Greenhouse Gas Inventory",
+        "aliases": [
+            "GHG Inventory",
+            "Emission Inventory"
+        ],
+        "definition": "A systematic accounting of all greenhouse gas emissions from a country, sector, or organization.",
+        "impact": "Helps track progress toward climate targets and informs policy decisions.",
+        "example": "The US EPA publishes an annual GHG inventory reporting emissions by sector.",
+        "scale": "Measured in metric tons of CO2 equivalent (CO2e)."
+    },
+    "Deforestation Monitoring": {
+        "term": "Deforestation Monitoring",
+        "aliases": [
+            "Forest Monitoring",
+            "Tree Cover Loss"
+        ],
+        "definition": "The observation and measurement of forest cover changes over time using satellites, aerial imagery, and ground surveys.",
+        "impact": "Identifies illegal logging, supports conservation, and tracks carbon emissions from forest loss.",
+        "example": "Global Forest Watch provides near-real-time alerts of deforestation hotspots.",
+        "scale": "Measured in hectares lost per year or per event."
+    },
+    "Environmental Impact Assessment": {
+        "term": "Environmental Impact Assessment",
+        "aliases": [
+            "EIA",
+            "Impact Study"
+        ],
+        "definition": "A formal process to evaluate the potential environmental effects of a proposed project before implementation.",
+        "impact": "Prevents environmental degradation, protects communities, and guides sustainable development.",
+        "example": "A hydroelectric dam project must undergo an EIA to assess its impact on local rivers and wildlife.",
+        "scale": "Measured qualitatively and quantitatively across multiple environmental parameters (water, air, soil, biodiversity)."
+    },
+    "Solar Energy": {
+        "term": "Solar Energy",
+        "aliases": [
+            "Photovoltaic Energy",
+            "Solar Power"
+        ],
+        "definition": "Energy harnessed from sunlight using solar panels or other technologies.",
+        "impact": "Reduces reliance on fossil fuels, lowers greenhouse gas emissions, and supports decentralized energy generation.",
+        "example": "Germany produces significant electricity from rooftop solar panels across urban areas.",
+        "scale": "Measured in megawatts (MW) of installed capacity and kilowatt-hours (kWh) produced."
+    },
+    "Wind Energy": {
+        "term": "Wind Energy",
+        "aliases": [
+            "Wind Power",
+            "AEolian Energy"
+        ],
+        "definition": "Energy generated from the kinetic energy of wind, converted to electricity using wind turbines.",
+        "impact": "Renewable, low-emission energy source that helps reduce carbon footprint and combat climate change.",
+        "example": "The Gansu Wind Farm in China is one of the largest wind power installations in the world.",
+        "scale": "Measured in MW installed capacity and kWh electricity generated."
+    },
+    "Hydropower": {
+        "term": "Hydropower",
+        "aliases": [
+            "Hydroelectric Energy",
+            "Water Power"
+        ],
+        "definition": "Electricity produced from the energy of flowing or falling water.",
+        "impact": "Provides large-scale renewable electricity but can impact river ecosystems and displace communities.",
+        "example": "The Three Gorges Dam in China generates over 22,500 MW of electricity.",
+        "scale": "Measured in MW capacity and annual energy output (GWh)."
+    },
+    "Geothermal Energy": {
+        "term": "Geothermal Energy",
+        "aliases": [
+            "Earth Heat Energy"
+        ],
+        "definition": "Energy derived from the heat stored beneath the Earth's surface.",
+        "impact": "Sustainable, low-emission energy source, particularly useful for heating and electricity in volcanic regions.",
+        "example": "Iceland generates a significant portion of its electricity and heating from geothermal sources.",
+        "scale": "Measured in MW capacity and energy output in GWh."
+    },
+    "Energy Storage": {
+        "term": "Energy Storage",
+        "aliases": [
+            "Battery Storage",
+            "Grid Storage"
+        ],
+        "definition": "Technologies that store energy for later use, such as batteries, pumped hydro, or thermal storage.",
+        "impact": "Enables renewable energy integration, stabilizes grids, and reduces dependence on fossil fuel backup generation.",
+        "example": "Tesla’s Hornsdale Power Reserve in Australia stores hundreds of MWh to balance solar and wind generation.",
+        "scale": "Measured in megawatt-hours (MWh) or gigawatt-hours (GWh)."
+    },
+    "Electric Vehicle": {
+        "term": "Electric Vehicle",
+        "aliases": [
+            "EV",
+            "Battery Vehicle"
+        ],
+        "definition": "A vehicle powered by electricity stored in batteries instead of conventional gasoline or diesel engines.",
+        "impact": "Reduces greenhouse gas emissions, air pollution, and fossil fuel demand while promoting sustainable transportation.",
+        "example": "Tesla Model 3 and Nissan Leaf are widely adopted electric vehicles globally.",
+        "scale": "Measured by battery capacity (kWh), driving range (km or miles), and emissions avoided."
+    },
+    "Sustainable Agriculture": {
+        "term": "Sustainable Agriculture",
+        "aliases": [
+            "Eco-friendly Farming",
+            "Agroecology"
+        ],
+        "definition": "Farming methods that maintain soil health, conserve water, reduce chemical inputs, and promote biodiversity.",
+        "impact": "Ensures long-term food security, reduces environmental damage, and mitigates greenhouse gas emissions from agriculture.",
+        "example": "Crop rotation, organic farming, and permaculture are sustainable agriculture practices.",
+        "scale": "Measured using soil quality indices, crop yield sustainability, and ecological impact metrics."
+    },
+    "Green Building": {
+        "term": "Green Building",
+        "aliases": [
+            "Sustainable Construction",
+            "Eco-building"
+        ],
+        "definition": "Construction of energy-efficient, resource-saving, and environmentally-friendly buildings.",
+        "impact": "Reduces energy consumption, greenhouse gas emissions, and operational costs while improving occupant health.",
+        "example": "LEED-certified buildings incorporate solar panels, energy-efficient insulation, and water-saving technologies.",
+        "scale": "Measured via LEED or BREEAM rating systems."
+    },
+    "Carbon Capture and Storage": {
+        "term": "Carbon Capture and Storage",
+        "aliases": [
+            "CCS",
+            "CO2 Sequestration"
+        ],
+        "definition": "Technologies that capture CO2 from industrial emissions and store it underground to prevent atmospheric release.",
+        "impact": "Mitigates climate change by reducing greenhouse gases while allowing continued industrial activity.",
+        "example": "The Sleipner CCS project in Norway captures CO2 from natural gas processing and stores it in offshore geological formations.",
+        "scale": "Measured in metric tons of CO2 captured and stored per year."
+    },
+    "Circular Economy": {
+        "term": "Circular Economy",
+        "aliases": [
+            "Closed-loop Economy",
+            "Sustainable Economy"
+        ],
+        "definition": "An economic system focused on reducing waste, reusing materials, and recycling to maintain resource value.",
+        "impact": "Minimizes environmental impact, reduces resource extraction, and promotes sustainable production and consumption.",
+        "example": "Companies redesign packaging to be fully recyclable and use reclaimed materials in production.",
+        "scale": "Measured using recycling rates, waste reduction percentages, and resource efficiency metrics."
+    },
+    "What is Air Quality Index (AQI)?": {
+        "term": "Air Quality Index",
+        "aliases": [
+            "AQI",
+            "Air Pollution Index"
+        ],
+        "definition": "A numeric scale that communicates how polluted the air is at a given location and its potential impact on health.",
+        "impact": "High AQI values indicate unhealthy air, which can trigger respiratory issues, cardiovascular problems, and general health risks for sensitive populations.",
+        "example": "An AQI of 200 is considered 'Unhealthy,' prompting advisories to avoid outdoor activities.",
+        "scale": "0–500; higher values indicate worse air quality."
+    },
+    "How is AQI measured?": {
+        "term": "AQI Measurement",
+        "aliases": [
+            "Air Quality Measurement"
+        ],
+        "definition": "AQI is calculated based on concentrations of pollutants including PM2.5, PM10, NO2, SO2, CO, and O3, each converted to a standardized scale.",
+        "impact": "Provides a clear, understandable way for the public to gauge health risks and take protective measures.",
+        "example": "A city monitors PM2.5 levels of 150 µg/m³ and translates it into an AQI of 201 (Unhealthy).",
+        "scale": "Pollutant concentrations in µg/m³ or ppb, converted to AQI 0–500."
+    },
+    "What causes climate change?": {
+        "term": "Climate Change Causes",
+        "aliases": [
+            "Global Warming Causes"
+        ],
+        "definition": "Primarily caused by human activities such as burning fossil fuels, deforestation, and industrial emissions of greenhouse gases like CO2 and CH4.",
+        "impact": "Leads to rising temperatures, extreme weather events, melting glaciers, sea-level rise, and ecosystem disruptions.",
+        "example": "Industrial CO2 emissions have increased global temperatures by ~1.2°C since pre-industrial times.",
+        "scale": "Measured by atmospheric CO2 concentration (ppm) and global average temperature rise (°C)."
+    },
+    "How to reduce carbon footprint?": {
+        "term": "Reducing Carbon Footprint",
+        "aliases": [
+            "Lower CO2 Emissions"
+        ],
+        "definition": "Actions that reduce the total greenhouse gas emissions caused directly or indirectly by an individual, organization, or product.",
+        "impact": "Mitigates climate change, reduces environmental degradation, and promotes sustainable living.",
+        "example": "Using public transport, consuming less meat, and switching to renewable energy sources lowers your carbon footprint.",
+        "scale": "Measured in metric tons of CO2 equivalent per year."
+    },
+    "What is global warming?": {
+        "term": "Global Warming",
+        "aliases": [
+            "Climate Warming"
+        ],
+        "definition": "Long-term rise in Earth’s average surface temperature caused by human emissions of greenhouse gases.",
+        "impact": "Results in extreme weather, rising sea levels, melting ice caps, and biodiversity loss.",
+        "example": "The Arctic is warming nearly four times faster than the global average, impacting polar ecosystems.",
+        "scale": "Measured in degrees Celsius compared to pre-industrial levels."
+    },
+    "What is greenhouse effect?": {
+        "term": "Greenhouse Effect",
+        "aliases": [
+            "Heat Trapping Effect"
+        ],
+        "definition": "The process by which greenhouse gases trap heat in the Earth’s atmosphere, maintaining habitable temperatures.",
+        "impact": "Essential for life, but human-induced enhancement leads to global warming and climate instability.",
+        "example": "CO2 emissions from factories increase atmospheric heat retention, amplifying the greenhouse effect.",
+        "scale": "Measured via radiative forcing in watts per square meter and GHG concentrations."
+    },
+    "How does deforestation affect the environment?": {
+        "term": "Deforestation Impact",
+        "aliases": [
+            "Forest Loss",
+            "Tree Cutting Impact"
+        ],
+        "definition": "The removal of forests reduces carbon sequestration, increases soil erosion, and disrupts ecosystems.",
+        "impact": "Contributes to climate change, habitat loss, and decreased biodiversity.",
+        "example": "The Amazon rainforest loses thousands of hectares annually due to logging and agriculture.",
+        "scale": "Measured in hectares of forest loss per year."
+    },
+    "What is PM2.5?": {
+        "term": "Particulate Matter 2.5",
+        "aliases": [
+            "Fine Particles",
+            "PM 2.5"
+        ],
+        "definition": "Airborne particles with diameters less than 2.5 micrometers that can penetrate deep into lungs and enter the bloodstream.",
+        "impact": "Causes respiratory illnesses, cardiovascular problems, and can lead to premature death in severe cases.",
+        "example": "Cities with heavy traffic often have PM2.5 levels exceeding 150 µg/m³, posing health risks.",
+        "scale": "Measured in micrograms per cubic meter (µg/m³)."
+    },
+    "How is water pollution measured?": {
+        "term": "Water Pollution Measurement",
+        "aliases": [
+            "Water Quality Assessment"
+        ],
+        "definition": "Quantifies the level of contaminants like chemicals, pathogens, and heavy metals in water bodies.",
+        "impact": "Essential for human health, ecosystem protection, and safe drinking water supply.",
+        "example": "Monitoring Biochemical Oxygen Demand (BOD) and pH in rivers to detect pollution.",
+        "scale": "BOD in mg/L, pH units, heavy metal concentration in mg/L."
+    },
+    "What is renewable energy?": {
+        "term": "Renewable Energy",
+        "aliases": [
+            "Clean Energy",
+            "Sustainable Energy"
+        ],
+        "definition": "Energy generated from sources naturally replenished, such as solar, wind, hydro, and geothermal power.",
+        "impact": "Reduces greenhouse gas emissions, lowers fossil fuel dependency, and promotes sustainable development.",
+        "example": "Germany generates nearly half of its electricity from wind and solar sources.",
+        "scale": "Measured in installed capacity (MW) and energy produced (kWh)."
+    },
+    "Earthquake": {
+        "term": "Earthquake",
+        "aliases": [
+            "Seismic Event",
+            "Quake"
+        ],
+        "definition": "A sudden shaking of the Earth's surface caused by the release of energy from tectonic plate movements.",
+        "impact": "Can cause massive structural damage, landslides, tsunamis, and loss of life.",
+        "example": "The 2011 Tōhoku earthquake in Japan triggered a devastating tsunami and nuclear accident.",
+        "scale": "Measured using the Richter or moment magnitude scale (Mw)."
+    },
+    "Tsunami": {
+        "term": "Tsunami",
+        "aliases": [
+            "Seismic Sea Wave"
+        ],
+        "definition": "A series of large ocean waves generated by underwater earthquakes, volcanic eruptions, or landslides.",
+        "impact": "Floods coastal areas, destroys infrastructure, and can lead to significant fatalities.",
+        "example": "The 2004 Indian Ocean tsunami killed over 230,000 people across multiple countries.",
+        "scale": "Measured by wave height (meters) and energy released."
+    },
+    "Volcanic Eruption": {
+        "term": "Volcanic Eruption",
+        "aliases": [
+            "Volcano Explosion",
+            "Lava Flow Event"
+        ],
+        "definition": "The expulsion of magma, ash, and gases from a volcano.",
+        "impact": "Destroys ecosystems, affects air quality, can trigger tsunamis, and impacts global climate by releasing aerosols.",
+        "example": "The 1991 eruption of Mount Pinatubo caused global temperatures to drop temporarily due to ash in the atmosphere.",
+        "scale": "Measured by Volcanic Explosivity Index (VEI) from 0 to 8."
+    },
+    "Hurricane": {
+        "term": "Hurricane",
+        "aliases": [
+            "Cyclone",
+            "Typhoon"
+        ],
+        "definition": "A large, rotating tropical storm with high-speed winds and heavy rainfall.",
+        "impact": "Causes flooding, wind damage, storm surges, and economic loss.",
+        "example": "Hurricane Katrina in 2005 caused severe flooding and destruction in New Orleans.",
+        "scale": "Measured using the Saffir-Simpson scale (Category 1–5) based on wind speed."
+    },
+    "Tornado": {
+        "term": "Tornado",
+        "aliases": [
+            "Twister",
+            "Cyclone Funnel"
+        ],
+        "definition": "A rapidly rotating column of air extending from a thunderstorm to the ground.",
+        "impact": "Destroys buildings, uproots trees, and causes injuries or fatalities in localized areas.",
+        "example": "The 2013 Moore, Oklahoma tornado caused widespread destruction and killed 24 people.",
+        "scale": "Measured using the Enhanced Fujita (EF) scale from EF0 to EF5."
+    },
+    "Flood": {
+        "term": "Flood",
+        "aliases": [
+            "Inundation",
+            "Water Overflow"
+        ],
+        "definition": "An overflow of water onto land that is normally dry, caused by heavy rain, dam breaks, or storm surges.",
+        "impact": "Damages property, displaces people, contaminates water, and can lead to disease outbreaks.",
+        "example": "The 2010 Pakistan floods affected over 20 million people and destroyed crops and infrastructure.",
+        "scale": "Measured by water depth (meters) and area affected (square km)."
+    },
+    "Landslide": {
+        "term": "Landslide",
+        "aliases": [
+            "Slope Failure",
+            "Mudslide"
+        ],
+        "definition": "The movement of rock, earth, or debris down a slope due to gravity, often triggered by rain, earthquakes, or volcanic activity.",
+        "impact": "Destroys buildings, blocks roads, and can cause fatalities.",
+        "example": "The 2014 Oso landslide in Washington, USA, killed 43 people and buried an entire neighborhood.",
+        "scale": "Measured by volume of debris (cubic meters) and affected area."
+    },
+    "Drought": {
+        "term": "Drought",
+        "aliases": [
+            "Water Scarcity",
+            "Dry Spell"
+        ],
+        "definition": "A prolonged period of below-average precipitation resulting in water shortages.",
+        "impact": "Reduces crop yields, affects drinking water supply, and increases wildfire risk.",
+        "example": "The 2011 East Africa drought caused severe famine affecting millions of people.",
+        "scale": "Measured by precipitation deficits, soil moisture, and Standardized Precipitation Index (SPI)."
+    },
+    "Heatwave": {
+        "term": "Heatwave",
+        "aliases": [
+            "Extreme Heat Event"
+        ],
+        "definition": "A prolonged period of excessively hot weather relative to normal conditions.",
+        "impact": "Increases mortality rates, triggers wildfires, strains energy systems, and impacts agriculture.",
+        "example": "The 2003 European heatwave caused over 70,000 deaths.",
+        "scale": "Measured by temperature anomalies (°C above average) and duration (days)."
+    },
+    "Blizzard": {
+        "term": "Blizzard",
+        "aliases": [
+            "Snowstorm"
+        ],
+        "definition": "A severe snowstorm with strong winds and low visibility.",
+        "impact": "Disrupts transportation, damages infrastructure, and poses risks of hypothermia.",
+        "example": "The 1978 Northeastern US blizzard caused 100 deaths and paralyzed multiple states.",
+        "scale": "Measured by wind speed (≥ 56 km/h), snowfall accumulation, and visibility (< 400 meters)."
+    },
+    "aqi": {
+        "term": "AQI",
+        "aliases": [
+            "air quality index",
+            "aqi in city"
+        ],
+        "definition": "AQI measures air pollution. Lowering AQI means reducing pollutants like PM2.5, PM10, CO, NO2, O3.",
+        "advice": [
+            "Use public transport instead of private vehicles.",
+            "Reduce industrial emissions.",
+            "Avoid burning garbage or crop residue.",
+            "Plant more trees."
+        ]
+    }
+}

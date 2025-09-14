@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aeris AI — Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="app">
+        <aside class="left">
+            <div class="brand">Aeris AI</div>
+
+            <div class="section">
+                <h3>Profile</h3>
+                <div class="mini profile" id="GotoProfile">
+                    <div class="avatar" id="userAvatar">A</div>
+                    <div>
+                        <div id="userName">User</div>
+                        <div id="userMode">Health-first mode</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h3>Location</h3>
+                <div class="mini">
+                    <div id="locationName">--</div>
+                    <div>Current location</div>
+                </div>
+            </div>
+        </aside>
+
+        <main class="center">
+            <section class="level-1">
+                <div class="card current">
+                    <div>
+                        <div class="temp-big" id="bigTemp">--°C</div>
+                        <div class="temp-sub" id="subLine">Loading...</div>
+                    </div>
+                    <div class="metrics">
+                        <div class="chip"><strong>UV</strong><br><span id="uvVal">--</span></div>
+                        <div class="chip"><strong>AQI</strong><br><span id="aqiVal">--</span></div>
+                        <div class="chip"><strong>Time</strong><br><span id="timeVal">--:--</span></div>
+                        <div class="chip"><strong>Location</strong><br><span id="locChip">--</span></div>
+                        <div class="chip"><strong>Wind</strong><br><span id="windVal">-- km/h</span></div>
+                    </div>
+                </div>
+
+                <div class="card hourly">
+                    <h4>Next Hours</h4>
+                    <div class="hourly-cards" id="hourlyCards"></div>
+                </div>
+            </section>
+
+            <section class="level-2">
+                <div class="card chart-wrap">
+                    <div class="chart-head">
+                        <div>Temperature</div>
+                        <div class="tabs">
+                            <button class="tab active" data-mode="hour">Per hour</button>
+                            <button class="tab" data-mode="week">Per week</button>
+                        </div>
+                    </div>
+                    <canvas id="tempChart" height="120"></canvas>
+                </div>
+
+                <div class="card messages" id="messagesContainer">
+                    <div>Messages</div>
+                </div>
+            </section>
+
+            <section class="level-3">
+                <div class="card notes">
+                    <div>Notes / Alerts</div>
+                    <div id="alertsContent">
+                        <p>Connect Telegram to get weather alerts:</p>
+                        <input type="text" id="telegramChatId" placeholder="Enter your Telegram Chat ID" />
+                        <button id="saveTelegramId">Save</button>
+                        <button id="testTelegramAlert">Send Test Alert</button>
+                        <p id="alertsMsg" style="color:green; margin-top:5px;"></p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <aside class="right">
+            <div class="week-head muted">This Week</div>
+            <div class="days" id="weekDays"></div>
+        </aside>
+    </div>
+
+    <!-- Full-Page Chat Interface -->
+    <div id="chatPage" class="chat-page hidden">
+        <header class="chat-header">
+            <div class="chat-title">Aeris AI</div>
+            <button id="closeChat" class="chat-close-btn">&times;</button>
+        </header>
+
+        <div class="chat-body" id="chatBody">
+            <!-- Messages will appear here -->
+        </div>
+
+        <footer class="chat-footer">
+            <input type="text" id="chatInput" placeholder="Type your message..." />
+            <button id="sendBtn">Send</button>
+        </footer>
+    </div>
+
+    <!-- Floating Chat Button -->
+    <button id="openChat" class="chat-float-btn">💬</button>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+
+</html>

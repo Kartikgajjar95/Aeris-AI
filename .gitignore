@@ -1,0 +1,47 @@
+# Virtual environments
+aeris/
+.venv/
+venv/
+env/
+
+# Python
+*.py[cod]
+__pycache__/
+*.pyo
+*.pyd
+
+# Pipenv / poetry
+Pipfile.lock
+poetry.lock
+
+# Jupyter
+.ipynb_checkpoints
+
+# system
+.DS_Store
+Thumbs.db
+
+# logs
+*.log
+
+# env files / secrets
+.env
+*.env
+secrets.json
+credentials.json
+
+# caches / model checkpoints
+.cache/
+.models/
+~/.cache/huggingface
+checkpoints/
+models/
+
+# IDE
+.vscode/
+.idea/
+
+# static build outputs
+dist/
+build/
+*.egg-info/

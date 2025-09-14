@@ -1,0 +1,35 @@
+[
+  {
+    "username": "kartik12",
+    "email": "kgajjar336@gmail.com",
+    "password": "123123",
+    "latitude": 23.0225,
+    "longitude": 72.5714,
+    "city": "Ahmedabad",
+    "mode": "Critical Alters",
+    "age": "20",
+    "conditions": "none",
+    "telegram_chat_id": "6273984936"
+  },
+  {
+    "username": "kartik123",
+    "email": "kgajjar336@gmail.com",
+    "password": "123123"
+  },
+  {
+    "username": "sneha",
+    "email": "kgajjar336@gmail.com",
+    "password": "123123"
+  },
+  {
+    "username": "hello",
+    "email": "hello@gmail.com",
+    "password": "123",
+    "latitude": 23.0225,
+    "longitude": 72.5714,
+    "city": "Ahmedabad",
+    "mode": "High",
+    "age": "12",
+    "conditions": "123"
+  }
+]
